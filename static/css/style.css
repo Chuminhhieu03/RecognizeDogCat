@@ -1,0 +1,162 @@
+:root {
+  --main-color: #ad171c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: whitesmoke;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 16px;
+  background-color: var(--main-color);
+
+}
+
+header h1 {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.wrapper {
+  position: absolute;
+  display: flex;
+  top: 45px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+
+  &>img {
+    position: absolute;
+    width: auto;
+  }
+
+  .dog1 {
+    height: 500px;
+    bottom: 0;
+    left: 0;
+  }
+
+  .cat2 {
+    right: 0;
+    bottom: 30px;
+    height: 350px;
+  }
+
+  .cat3 {
+    right: 20px;
+    bottom: 0;
+  }
+}
+
+main {
+  position: relative;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: white;
+  width: 30%;
+  text-align: center;
+}
+
+main .cat1 {
+  position: absolute;
+  height: 120px;
+  width: auto;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+input {
+  display: none;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  display: block;
+  background-color: var(--main-color);
+  padding: 8px 16px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 16px;
+  text-align: center;
+  transition: all ease .2s;
+}
+
+#imageRecognize {
+  transition: transform 0.3s;
+}
+
+#imageRecognize:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+#formRecognize button {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#formRecognize button:hover {
+  background-color: #e03d3d;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@keyframes pulse {
+  0% {
+    color: #000;
+    text-shadow: none;
+    font-size: 30px;
+  }
+
+  50% {
+    color: red;
+    text-shadow: 0 0 4px #eb5408, 0 -5px 30px rgba(224, 25, 10, 0.7);
+    font-size: 40px;
+  }
+
+  100% {
+    color: #000;
+    text-shadow: none;
+    font-size: 30px;
+  }
+}
+
+#text-result {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Cat and dog recognize</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cats and dogs recognize</h1>
+    </header>
+    <div class="wrapper">
+        <main>
+            <img src="{%static 'images/images.png'%}" id="imageRecognize" alt="">
+            <form action="/recognize/" method="post" enctype="multipart/form-data" id="formRecognize">
+                {% csrf_token %}
+                <input id="fileImage" type="file" accept="image/jpeg, image/png, image/jpg" id="input-img" name="image"
+                    hidden>
+                <button type="submit">Recognize</button>
+            </form>
+            <img draggable="false" src="{% static 'images/cat1.png' %}" alt="" class="cat1">
+            <div id="text-result">Is this a Dog or Cat?</div>
+        </main>
+        <img draggable="false" src="{% static 'images/dog1.png' %}" alt="" class="dog1">
+        <img draggable="false" src="{% static 'images/cat2.png' %}" alt="" class="cat2">
+        <img draggable="false" src="{% static 'images/cat3.png' %}" alt="" class="cat3">
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/recognize.js' %}"></script>
+</body>
+
+</html>
